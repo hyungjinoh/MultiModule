@@ -15,6 +15,12 @@ import lombok.extern.slf4j.Slf4j;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+    // 멤버메서드 모두 CommonResponse<?> 타입으로 리턴한다.
+    //getCommonResponse()메서드는 리턴타입이 CommonResponse<?> , private 으로 특이하다.
+
+    //생성한 커스텀 클래스, 익셉션 핸들링
+    // Exception 클래스, 핸들링
+
     @ExceptionHandler(CustomException.class)
     public CommonResponse<?> handlerCustomException(CustomException e) {
         return getCommonResponse(e.getReturnCode(), e.getReturnMessage());

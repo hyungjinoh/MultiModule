@@ -17,10 +17,17 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CommonResponse<T> {
+
+    //멤버 변수 3개 : 리턴코드, 리턴메시지, 제너릭 클래스형태
     private String returnCode;
     private String returnMessage;
     private T info;
 
+    //생성자 3개
+    // CodeEnum 을 인자로 갖는것, 또는 제너릭 T만 받는것 ==> 항상성공
+    // 3개의 멤버변수 모두 생성자 인자로 받는것
+
+    //성공 메서드 => 빌더로 static CommonResponse 객체 생성하여 리턴
     public CommonResponse(CodeEnum codeEnum) {
         this(codeEnum, null);
     }

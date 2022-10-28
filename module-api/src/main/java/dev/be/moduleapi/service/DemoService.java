@@ -25,6 +25,7 @@ public class DemoService {
         System.out.println("env profile : " + name);
         System.out.println("commonDemoService.getName() : " + commonDemoService.getModuleName());
 
+        //DB에 저장할때엔 엔터티 객체를 빌더형식으로 생성후 저장한다.
         Member newMember = memberRepository.save(Member.builder()
                                                        .name(Thread.currentThread().getName())
                                                        .build());
@@ -32,7 +33,7 @@ public class DemoService {
     }
 
     public String find() {
-        return String.valueOf(memberRepository.findAll().size());
+        //String으로 리턴해야 해서...다음과 같이 표시함???ㄴ        return String.valueOf(memberRepository.findAll().size());
     }
 
     public String handleCustomException() {
