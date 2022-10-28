@@ -26,6 +26,7 @@ public class CommonResponse<T> {
     }
 
     public CommonResponse(T info) {
+        //항상성공
         this(CodeEnum.SUCCESS, info);
     }
 
@@ -35,6 +36,7 @@ public class CommonResponse<T> {
     }
 
     public void setReturnCode(CodeEnum codeEnum) {
+        //리턴코드와 리턴메시지를 함께 세팅
         this.returnCode = codeEnum.getCode();
         this.returnMessage = codeEnum.getMessage();
     }
